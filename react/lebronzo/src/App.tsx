@@ -7,7 +7,7 @@ class App extends React.Component {
 
 
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style={{ "backgroundColor": "blueviolet" }}>
+        <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style={{ "backgroundColor": "blueviolet"}}>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
@@ -23,7 +23,7 @@ class App extends React.Component {
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             </form>
             <button className="btn btn-link">
-              <i className="fas fa-cogs fa-lg" />
+              <i className="fas fa-cogs fa-lg" style={{"color":"white"}}/>
             </button>
           </div>
         </nav>
