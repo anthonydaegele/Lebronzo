@@ -7,12 +7,12 @@ class App extends React.Component {
 
 
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style={{"backgroundColor":"blueviolet"}}>
+        <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style={{ "backgroundColor": "blueviolet" }}>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"/>
+            <span className="navbar-toggler-icon" />
           </button>
-          <a className="navbar-brand" href="#">LA-Bronzo</a>
+          <a className="navbar-brand" href="#" style={{ "color": "yellow" }}>LA-Bronzo</a>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="navbar-nav mr-auto mt-2 mt-lg-0">
