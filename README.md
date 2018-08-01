@@ -1,5 +1,4 @@
 # Lebronzo
 Developer School Project
 
-Anthony Daegele
-Nick Palutsis
+Anthony Daegele || Nick Palutsis
