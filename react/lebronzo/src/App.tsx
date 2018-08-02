@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { EventItem } from './EventItem';
+import { myEvents } from './myEvents';
 
 interface EventItemData {
   name: string;
@@ -14,6 +15,7 @@ interface EventItemData {
 
 interface EventFeedState {
   events: Array<EventItemData>;
+  myEvents: Array<myEventData>;
   newEventName: string;
   newEventOwner: string;
   newEventLocation: string;
@@ -22,6 +24,14 @@ interface EventFeedState {
   newEventImage: string;
   newEventDescription: string;
 }
+
+interface myEventData {
+  name: string;
+}
+
+// interface myEventsState {
+//   names: Array<myEventData>;
+// }
 
 // class EventFeed extends React.Component<{}, EventFeedState> {
 //   contructor(p: {}){
@@ -70,8 +80,21 @@ class EventFeed extends React.Component<{}, EventFeedState> {
       description: "Come watch Lebron Jr. beat down on some scrubs"
     }
 
+    var myEvent1: myEventData = {
+      name: "Lebron is coming to LA!"
+    }
+
+    var myEvent2: myEventData = {
+      name: "Bachelorette finale watch!"
+    }
+
+    var myEvent3: myEventData = {
+      name: "Lebron Jr Birthday!"
+    }
+
     this.state = {
       events: [event1, event2, event3],
+      myEvents: [myEvent1, myEvent2, myEvent3],
       newEventName: "",
       newEventOwner: "",
       newEventLocation: "",
@@ -80,6 +103,30 @@ class EventFeed extends React.Component<{}, EventFeedState> {
       newEventImage: "",
       newEventDescription: ""
     };
+
+    // class myEvents extends React.Component<{}, myEventsState> {
+    //   constructor(p: {}) {
+    //     super(p);
+
+    //     var myEvent1: myEventData = {
+    //       name: "Lebron is coming to LA!"
+    //     }
+
+    //     var myEvent2: myEventData = {
+    //       name: "Bachelorette finale watch!"
+    //     }
+
+    //     var myEvent3: myEventData = {
+    //       name: "Lebron Jr Birthday!"
+    //     }
+
+    //     this.state = {
+    //       names: [myEvent1, myEvent2, myEvent3]
+    //     }
+    //   }
+
+    // }
+
   }
 
   onEventRSVP = (name: string) => {
@@ -95,6 +142,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
   public render() {
 
     var eventData = this.state.events;
+    var myEventData = this.state.myEvents;
 
     return (
 
@@ -360,25 +408,32 @@ class EventFeed extends React.Component<{}, EventFeedState> {
               </div>
         </div> */}
             </div>
-          <div className="col-md-3">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="card">
-                  <div className="card-body">
-                    <h2>My Events</h2>
-                    <div>Heading to LA</div>
-                    <div>AAU Tournament Watch</div>
-                    <div>Bachelorette Finale Watch</div>
-                    <div>Wine Night</div>
+            <div className="col-md-3">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="card">
+                    <div className="card-body">
+                      <h2>My Events</h2>
+                      {/* <div>Heading to LA</div>
+                      <div>AAU Tournament Watch</div>
+                      <div>Bachelorette Finale Watch</div>
+                      <div>Wine Night</div> */}
+
+                      <div>{myEventData.map(event =>
+                        <myEvents key={event.name} name={event.name} />
+                      )}
+                      </div>
+
+
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            {/* </div> */}
           </div>
-          {/* </div> */}
+          {/* end of event */}
         </div>
-        {/* end of event */}
-      </div>
       </div>
     );
   }

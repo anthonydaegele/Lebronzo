@@ -34,7 +34,7 @@ export class EventItem extends React.Component<EventItemProps>{
                                 <div className="col-md-8">
                                     <div className="card-body">
                                         <div className="news-content">
-                                            <a href="#"><h2>{this.props.description}</h2></a>
+                                            <a href="#"><h2>{this.props.name}</h2></a>
                                             <p className="text-secondary"> Organizer: {this.props.owner}</p>
                                             <p><i className="fa fa-calendar" />{this.props.date} </p>
                                             <p><i className="fa fa-map-pin" aria-hidden="true" /> {this.props.location}</p>
