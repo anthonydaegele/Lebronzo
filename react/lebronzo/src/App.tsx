@@ -301,7 +301,6 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                             <div className="input-group">
                               <input type="text" id="userComment" className="form-control input-sm chat-input" placeholder="Write your message here..." />
                               <span className="input-group-btn">
-                                {/* Removed `onClick={addComment}` from above line */}
                                 <a href="#" className="btn btn-primary btn-sm">
                                   <span className="glyphicon glyphicon-comment"></span> Add Comment</a>
                               </span>
@@ -336,15 +335,14 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                     </div>
                   </div>
 
-                  {/* bottom of container */}
 
                 </div>
 
                 <div className="row">
                   <div className="col-md-2"></div>
-                  <button type="button" className="btn btn-success col-md-3" data-dismiss="modal">RSVP</button>
+                  <button onClick={() => this.onEventRSVP(this.state.SelectedEvent.name)} type="button" className="btn btn-success col-md-3" data-dismiss="modal">RSVP</button>
                   <div className="col-md-2"></div>
-                  <button type="button" className="btn btn-danger col-md-3" data-dismiss="modal">Ignore</button>
+                  <button onClick={() => this.onEventIgnore(this.state.SelectedEvent.name)} type="button" className="btn btn-danger col-md-3" data-dismiss="modal">Ignore</button>
                   <div className="col-md-2"></div>
                 </div>
 
@@ -363,100 +361,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
               )}
               </div>
 
-              {/*<div className="row mb-2">
-                <div className="col-md-12">
-                  <div className="card">
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-4">
-                          <img src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg" />
-                        </div>
-                        <div className="col-md-8">
-                          <div className="card-body">
-                            <div className="news-content">
-                              <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><h2>Hey guys I'm a total loser and I am heading to LA to make movies and all of that jazz... It's ok though because Nick still loves me, and I still love him</h2></a>
-                              <p className="text-secondary"> Organizer: LeBron James</p>
-                              <p><i className="fa fa-calendar" /> July 2, 2018 </p>
-                              <p><i className="fa fa-map-pin" aria-hidden="true" /> This place is basically hell. Nobody likes it here. We have earthquakes, celebrities, and avocado toast... what could possibly be worse</p>
-                              <p className="text-secondary"><i>Basketball, Traveling, Movies, Drake, Henny, Lifting, Strive for Greatness, Season 16</i></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-2" />
-                        <button type="button" className="btn btn-success col-md-3">RSVP</button>
-                        <div className="col-md-2" />
-                        <button type="button" className="btn btn-danger col-md-3">Ignore</button>
-                        <div className="col-md-2" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mb-2">
-                <div className="col-md-12">
-                  <div className="card">
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-4">
-                          <img src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg" />
-                        </div>
-                        <div className="col-md-8">
-                          <div className="card-body">
-                            <div className="news-content">
-                              <a href="#"><h2>Heading to LA</h2></a>
-                              <p className="text-secondary"> Organizer: LeBron James</p>
-                              <p><i className="fa fa-calendar" /> July 2, 2018 </p>
-                              <p><i className="fa fa-map-pin" aria-hidden="true" /> Los Angeles, CA</p>
-                              <p className="text-secondary"><i>Basketball, Traveling, Movies</i></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-2" />
-                        <button type="button" className="btn btn-success col-md-3">RSVP</button>
-                        <div className="col-md-2" />
-                        <button type="button" className="btn btn-danger col-md-3">Ignore</button>
-                        <div className="col-md-2" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mb-2">
-                <div className="col-md-12">
-                  <div className="card">
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-4">
-                          <img src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg" />
-                        </div>
-                        <div className="col-md-8">
-                          <div className="card-body">
-                            <div className="news-content">
-                              <a href="#"><h2>Heading to LA</h2></a>
-                              <p className="text-secondary"> Organizer: LeBron James</p>
-                              <p><i className="fa fa-calendar" /> July 2, 2018 </p>
-                              <p><i className="fa fa-map-pin" aria-hidden="true" /> Los Angeles, CA</p>
-                              <p className="text-secondary"><i>Basketball, Traveling, Movies</i></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-2" />
-                        <button type="button" className="btn btn-success col-md-3">RSVP</button>
-                        <div className="col-md-2" />
-                        <button type="button" className="btn btn-danger col-md-3">Ignore</button>
-                        <div className="col-md-2" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div> */}
+             
             </div>
             <div className="col-md-3">
               <div className="row">
