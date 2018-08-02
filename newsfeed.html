@@ -1,157 +1,348 @@
 <html>
-    <head>
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-            <style>
-                div.scroll {
-                    /* background-color: lightblue; */
-                    height: 90vh;
-                    width: 1000px;
-                    overflow-y: scroll;
-                }
-                img {
-                    width:100%;
-                    background-size: cover;
-                    background-position: center; /* Center the image within the element */
-                }
-                .thumb-post img {
-                    object-fit: cover;
-                    object-position: center; /* Center the image within the element */
-                    width: 100%;
-                    height: 20px;
-                    /* max-height: 20px%; */
-                    overflow: hidden;
-                    /* margin-bottom: 1rem; */
-                }
-                .center-div {
-                    margin: 0 auto;
-                    width: 100px; 
-                }
-                a.navbar-brand { font-family: "Brush Script MT", cursive; font-size: 36px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
-            </style>
-            <style type="text/css">
-                body { background: rgb(245, 235, 255) !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-             </style>
-            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </head>
-    <body>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:blueviolet;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#" style="color:yellow;">LA-Bronzo</a>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <a class="nav-item nav-link" href="#">Feed</a>
-                    <a class="nav-item nav-link" href="#">Create Event</a>
-                </div>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
-                <button class="btn btn-link">
-                    <i class="fas fa-cogs fa-lg" style="color:white;"></i>
-                </button>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <style>
+        div.scroll {
+            /* background-color: lightblue; */
+            height: 90vh;
+            width: 1000px;
+            overflow-y: scroll;
+        }
+
+        img {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            /* Center the image within the element */
+        }
+
+        .thumb-post img {
+            object-fit: cover;
+            object-position: center;
+            /* Center the image within the element */
+            width: 100%;
+            height: 20px;
+            /* max-height: 20px%; */
+            overflow: hidden;
+            /* margin-bottom: 1rem; */
+        }
+
+        .center-div {
+            margin: 0 auto;
+            width: 100px;
+        }
+
+        a.navbar-brand {
+            font-family: "Brush Script MT", cursive;
+            font-size: 36px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 700;
+            line-height: 26.4px;
+        }
+    </style>
+    <style type="text/css">
+        body {
+            background: rgb(245, 235, 255) !important;
+        }
+
+        /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color:blueviolet;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="color:yellow;">LA-Bronzo</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <a class="nav-item nav-link" href="#">Feed</a>
+                <a class="nav-item nav-link" href="#">Create Event</a>
             </div>
-        </nav>
-        <div class="container" style="margin-top: 20px">
-            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <button class="btn btn-link">
+                <i class="fas fa-cogs fa-lg" style="color:white;"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 20px">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+            crossorigin="anonymous">
 
-            <!-- <div class="container"> -->
-                <div class="row">
-                    <div class="col-md-9 scroll">
-                        <!-- this is the top of the cell -->
-                        <div class="row mb-2">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <img style="object-fit: cover; height: 225px; overflow: hidden" src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <div class="news-content">
-                                                        <a href="#"><h2 style = "color: blueviolet">Hey guys I'm a total loser and I am heading to LA to make movies and all of that jazz... It's ok though because Nick still loves me, and I still love him <3</h2></a>
-                                                        <p class = "text-secondary"> Organizer: LeBron James</p>
-                                                        <p><i class="fa fa-calendar"></i> July 2, 2018 </p>
-                                                        <p><i class="fa fa-map-pin" aria-hidden="true"></i> This place is basically hell. Nobody likes it here. We have earthquakes, celebrities, and avocado toast... what could possibly be worse</p>
-                                                        <p class = "text-secondary"><i>Basketball, Traveling, Movies, Drake, Henny, Lifting, Strive for Greatness, Season 16</i></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-2"></div>
-                                            <button type="button" class="btn btn-success col-md-3" style="margin: 0.5rem">RSVP</button>
-                                            <div class="col-md-2"></div>
-                                            <button type="button" class="btn btn-danger col-md-3" style="margin: 0.5rem">Ignore</button>
-                                            <div class="col-md-2"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- This is the end of the cell -->
-                        <!-- this is the top of the cell -->
-                        <div class="row mb-2">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <img style="object-fit: cover; height: 225px; overflow: hidden" src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <div class="news-content">
-                                                        <a href="#"><h2 style = "color: blueviolet">Heading to LA</h2></a>
-                                                        <p class = "text-secondary"> Organizer: LeBron James</p>
-                                                        <p><i class="fa fa-calendar"></i> July 2, 2018 </p>
-                                                        <p><i class="fa fa-map-pin" aria-hidden="true"></i> Los Angeles, CA</p>
-                                                        <p class = "text-secondary"><i>Basketball, Traveling, Movies</i></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-2"></div>
-                                            <button type="button" class="btn btn-success col-md-3" style="margin: 0.5rem">RSVP</button>
-                                            <div class="col-md-2"></div>
-                                            <button type="button" class="btn btn-danger col-md-3" style="margin: 0.5rem">Ignore</button>
-                                            <div class="col-md-2"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- This is the end of the cell -->
+
+
+
+
+
+
+
+        <!-- Large modal -->
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 style="color:blueviolet;">AAU Game</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h2>My Events</h2>
-                                        <div>Heading to LA</div>
-                                        <div>AAU Tournament Watch</div>
-                                        <div>Bachelorette Finale Watch</div>
-                                        <div>Wine Night</div>
+                    <div class="modal-body">
+
+
+                        <!-- beginning of event -->
+                        <!-- <div class="container"> -->
+                            <div class="row">
+                                <div class="scroll">
+                                    <!-- <div class="scroll column-md-8" style="height:100%;"> -->
+                                    <!-- <div class="row"> -->
+                                    <!-- <div class="column-md-8 column-sm-12"> -->
+                                    <div style="height:200px; overflow:hidden;">
+                                        <img src="http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276"
+                                            style="width:100%;">
                                     </div>
+                                    <!-- </div> -->
+                                    <!-- </div> -->
+                                    <div class="card">
+                                        <div class="card-body" style="height: 5px;">
+                                            <div class="row justify-content-center">
+                                                <i>Lebron James</i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body" style="height: 5px;">
+                                            <div class="row justify-content-center">
+                                                <i>Tuesday, July 31st</i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body" style="height: 5px;">
+                                            <div class="row justify-content-center">
+                                                <i>300 N Cavalier Avenue, Los Angeles, CA 90011</i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body" style="height: auto; width: auto;">
+                                            <div class="row justify-content-center">
+                                                <p>Come watch Lebron Jr. beat down on inferior players. Food will be provided
+                                                    courtesy of Blaze Pizza.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row justify-content-center">
+                                                <ul class="list-inline list-unstyled">
+                                                    <li class="list-inline-item text-secondary">
+                                                        <i>
+                                                            <u>basketball</u>
+                                                        </i>
+                                                    </li>
+                                                    <li class="list-inline-item text-secondary">
+                                                        <i>
+                                                            <u>Lebron Jr</u>
+                                                        </i>
+                                                    </li>
+                                                    <li class="list-inline-item text-secondary">
+                                                        <i>
+                                                            <u>Los Angeles</u>
+                                                        </i>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row justify-content-center">
+                                                <h3 style="color:blueviolet;">Comments</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row justify-content-center">
+                                                <div class="input-group">
+                                                    <input type="text" id="userComment" class="form-control input-sm chat-input" placeholder="Write your message here..." />
+                                                    <span class="input-group-btn" onclick="addComment()">
+                                                        <a href="#" class="btn btn-primary btn-sm">
+                                                            <span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <strong class="pull-left primary-font">James</strong>
+                                                <small class="pull-right text-muted" style="padding-left:10px; padding-top:3px;">
+                                                    <span class="glyphicon glyphicon-time"></span>7 mins ago</small>
+                                                </br>
+                                                <p>Wow this looks like such a fun event. I can't wait to see Lebron play in
+                                                    LA, what a waste it was for him to play in Cleveland! I look forward
+                                                    to the food and entertainment!</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <strong class="pull-left primary-font">Chris</strong>
+                                                <small class="pull-right text-muted" style="padding-left:10px; padding-top: 3px;">
+                                                    <span class="glyphicon glyphicon-time"></span>18 mins ago</small>
+                                                </br>
+                                                <p>I am so glad Lebron is in LA now. He simply does not belong in Cleveland!
+                                                    All that talent, but so far away from any kind of championship culture
+                                                    or mentality? SHAME!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        <!-- </div> -->
+                        <!-- end of event -->
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <button type="button" class="btn btn-success col-md-3" style="margin: 0.5rem" data-dismiss="modal">RSVP</button>
+                        <div class="col-md-2"></div>
+                        <button type="button" class="btn btn-danger col-md-3" style="margin: 0.5rem" data-dismiss="modal">Ignore</button>
+                        <div class="col-md-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- <div class="container"> -->
+        <div class="row">
+            <div class="col-md-9 scroll">
+                <!-- this is the top of the cell -->
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img style="object-fit: cover; height: 225px; overflow: hidden" src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="news-content">
+                                                <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                                    <h2 style="color: blueviolet">Hey guys I'm a total loser and I am heading to LA to make movies and
+                                                        all of that jazz... It's ok though because Nick still loves me, and
+                                                        I still love him
+                                                        <3</h2>
+                                                </a>
+                                                <p class="text-secondary"> Organizer: LeBron James</p>
+                                                <p>
+                                                    <i class="fa fa-calendar"></i> July 2, 2018 </p>
+                                                <p>
+                                                    <i class="fa fa-map-pin" aria-hidden="true"></i> This place is basically hell. Nobody likes it here. We have earthquakes,
+                                                    celebrities, and avocado toast... what could possibly be worse</p>
+                                                <p class="text-secondary">
+                                                    <i>Basketball, Traveling, Movies, Drake, Henny, Lifting, Strive for Greatness,
+                                                        Season 16</i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <button type="button" class="btn btn-success col-md-3" style="margin: 0.5rem">RSVP</button>
+                                    <div class="col-md-2"></div>
+                                    <button type="button" class="btn btn-danger col-md-3" style="margin: 0.5rem">Ignore</button>
+                                    <div class="col-md-2"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
+                <!-- This is the end of the cell -->
+                <!-- this is the top of the cell -->
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img style="object-fit: cover; height: 225px; overflow: hidden" src="https://www.forumblueandgold.com/wp-content/uploads/lelaker-1024x650.jpg">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="news-content">
+                                                <a href="#">
+                                                    <h2 style="color: blueviolet">Heading to LA</h2>
+                                                </a>
+                                                <p class="text-secondary"> Organizer: LeBron James</p>
+                                                <p>
+                                                    <i class="fa fa-calendar"></i> July 2, 2018 </p>
+                                                <p>
+                                                    <i class="fa fa-map-pin" aria-hidden="true"></i> Los Angeles, CA</p>
+                                                <p class="text-secondary">
+                                                    <i>Basketball, Traveling, Movies</i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <button type="button" class="btn btn-success col-md-3" style="margin: 0.5rem">RSVP</button>
+                                    <div class="col-md-2"></div>
+                                    <button type="button" class="btn btn-danger col-md-3" style="margin: 0.5rem">Ignore</button>
+                                    <div class="col-md-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- This is the end of the cell -->
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>My Events</h2>
+                                <div>Heading to LA</div>
+                                <div>AAU Tournament Watch</div>
+                                <div>Bachelorette Finale Watch</div>
+                                <div>Wine Night</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
+        <!-- </div> -->
+    </div>
+</body>
+
 </html>
