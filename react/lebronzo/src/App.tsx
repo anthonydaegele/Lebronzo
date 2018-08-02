@@ -1,5 +1,35 @@
 import * as React from 'react';
 import './App.css';
+import { EventItem } from './EventItem';
+
+interface EventItemData {
+  name: string;
+  owner: string;
+  location: string;
+  date: string;
+  tags: Array<string>;
+}
+
+interface EventItemState {
+  events: Array<EventItemData>;
+  newEventName: string;
+  newEventOwner: string;
+  newEventLocation: string;
+  newEventDate: string;
+  newEventTags: Array<string>;
+}
+
+class EventFeed extends React.Component<{}, EventItemState> {
+  contructor(p: {}){
+    super(p);
+    this.state = { events: [],
+    newEventName: "",
+    newEventOwner: "",
+    newEventLocation: "",
+    newEventDate: "",
+    newEventTags: [] };
+  }
+}
 
 class App extends React.Component {
   public render() {
