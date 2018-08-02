@@ -38,13 +38,13 @@ export class EventItem extends React.Component<EventItemProps>{
                                             <p className="text-secondary"> Organizer: {this.props.owner}</p>
                                             <p><i className="fa fa-calendar" />{this.props.date} </p>
                                             <p><i className="fa fa-map-pin" aria-hidden="true" /> {this.props.location}</p>
-                                            <p className="text-secondary"><i>{this.props.tags.map(tag => {
-                                                return ( <div key={this.props.name}>
+                                            <div className="text-secondary"><i>{this.props.tags.map(tag => {
+                                                return ( <div key={tag}>
                                                         <div>{tag}</div>
                                                         </div>)
                                             })
                                             }
-                                            </i></p>
+                                            </i></div>
                                         </div>
                                     </div>
                                 </div>

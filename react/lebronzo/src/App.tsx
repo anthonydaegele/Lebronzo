@@ -259,14 +259,14 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
 
           <div>{eventData.map(event =>
-            <EventItem name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore}/>
+            <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore}/>
           )}
           </div>
 
 
-          {/* <div className="row">
+          <div className="row">
             <div className="col-md-9 scroll">
-              <div className="row mb-2">
+              {/*<div className="row mb-2">
                 <div className="col-md-12">
                   <div className="card">
                     <div className="card-body">
@@ -359,7 +359,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                   </div>
                 </div>
               </div>
-            </div>
+        </div> */}
             <div className="col-md-3">
               <div className="row">
                 <div className="col-md-12">
@@ -374,10 +374,12 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
     {/* </div> */}
         </div>
         {/* end of event */}
+      </div>
+      </div>
       </div>
     );
   }
