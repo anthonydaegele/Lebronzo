@@ -138,11 +138,21 @@ class EventFeed extends React.Component<{}, EventFeedState> {
   }
 
   onEventRSVP = (name: string) => {
-
+    var events = this.state.events;
+    var myEvents = this.state.myEvents;
+    var newMyEvent: MyEventData = {
+      name: name
+    };
+    //console.log(newMyEvent)
+    myEvents.push(newMyEvent);
+    events = events.filter( x => x.name != name);
+    this.setState({events:events, myEvents:myEvents});
   }
 
   onEventIgnore = (name: string) => {
-
+    var events = this.state.events;
+    events = events.filter( x => x.name != name);
+    this.setState({events: events});
 
   }
 
