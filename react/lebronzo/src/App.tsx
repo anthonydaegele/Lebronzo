@@ -16,6 +16,7 @@ interface EventItemData {
 interface EventFeedState {
   events: Array<EventItemData>;
   myEvents: Array<MyEventData>;
+  SelectedEvent: EventItemData;
   newEventName: string;
   newEventOwner: string;
   newEventLocation: string;
@@ -119,6 +120,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     this.state = {
       events: [event1, event2, event3],
       myEvents: [myEvent1, myEvent2, myEvent3],
+      SelectedEvent: event1,
       newEventName: "",
       newEventOwner: "",
       newEventLocation: "",
@@ -188,6 +190,13 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
   }
 
+  onEventSelectEvent = (name: string) => {
+    var events = this.state.events;
+    var event_to_load_array = events.filter(event => event.name == name);
+    var event_to_load = event_to_load_array[0];
+    this.setState({SelectedEvent:event_to_load});
+  }
+
 
   public render() {
 
@@ -226,11 +235,11 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
           {/* top of modal */}
           {/* I deleted `tabindex="-1"` but I'm not sure if that's important */}
-          <div className="modal fade bd-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div id="event-modal" className="modal fade bd-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div className="modal-dialog  modal-dialog-centered modal-lg">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h2>AAU Game</h2>
+                  <h2>{this.state.SelectedEvent.name}</h2>
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -242,28 +251,27 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                   <div className="row">
                     <div className="scroll">
                       <div>
-                        <img src="http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276"></img>
+                        <img src={this.state.SelectedEvent.image}></img>
                       </div>
                       <div className="card">
                         <div className="card-body">
                           <div className="row justify-content-center">
-                            <i>Lebron James</i>
+                            <i>{this.state.SelectedEvent.owner}</i>
                           </div>
                         </div>
                         <div className="card-body">
                           <div className="row justify-content-center">
-                            <i>Tuesday, July 31st</i>
+                            <i>{this.state.SelectedEvent.date}</i>
                           </div>
                         </div>
                         <div className="card-body">
                           <div className="row justify-content-center">
-                            <i>300 N Cavalier Avenue, Los Angeles, CA 90011</i>
+                            <i>{this.state.SelectedEvent.location}</i>
                           </div>
                         </div>
                         <div className="card-body">
                           <div className="row justify-content-center">
-                            <p>Come watch Lebron Jr. beat down on inferior players. Food will be provided
-                                courtesy of Blaze Pizza.
+                            <p>{this.state.SelectedEvent.description}
                                                 </p>
                           </div>
                         </div>
@@ -359,7 +367,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
             <div className="col-md-9 scroll">
 
               <div>{eventData.map(event =>
-                <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore} />
+                <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore} onSelectEvent={this.onEventSelectEvent}/>
               )}
               </div>
 

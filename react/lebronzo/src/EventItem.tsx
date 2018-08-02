@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import { throws } from 'assert';
 
 export interface EventItemProps {
     name: string;
@@ -10,6 +11,7 @@ export interface EventItemProps {
     description: string;
     onRSVP: (name: string) => void;
     onIgnore: (name: string) => void;
+    onSelectEvent: (name: string) => void;
 }
 
 export class EventItem extends React.Component<EventItemProps>{
@@ -19,6 +21,10 @@ export class EventItem extends React.Component<EventItemProps>{
 
     onIgnore = () => {
         this.props.onIgnore(this.props.name);
+    }
+
+    onSelectEvent = () => {
+        this.props.onSelectEvent(this.props.name);
     }
 
     render() {
@@ -34,7 +40,7 @@ export class EventItem extends React.Component<EventItemProps>{
                                 <div className="col-md-8">
                                     <div className="card-body">
                                         <div className="news-content">
-                                            <a href="#"><h2>{this.props.name}</h2></a>
+                                            <a href="#" onClick={this.onSelectEvent} data-toggle="modal" data-target="#event-modal"><h2>{this.props.name}</h2></a>
                                             <p className="text-secondary"> Organizer: {this.props.owner}</p>
                                             <p><i className="fa fa-calendar" />{this.props.date} </p>
                                             <p><i className="fa fa-map-pin" aria-hidden="true" /> {this.props.location}</p>
