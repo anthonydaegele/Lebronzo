@@ -69,12 +69,12 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
     var event2: EventItemData = {
       name: "AAU Game 2",
-      owner: "Lebron James",
-      location: "Los Angeles, CA",
-      date: "August 2nd",
-      tags: ["basketball", "LA", "Lebron", "Not Cleveland"],
-      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
-      description: "Come watch Lebron Jr. beat down on some scrubs"
+      owner: "Nick Palutsis",
+      location: "Hell",
+      date: "August 10th",
+      tags: ["basketball", "LA", "Lebron", "Not Cleveland", "the devil"],
+      image: "https://thenypost.files.wordpress.com/2018/01/lebron-2.jpg?quality=90&strip=all",
+      description: "Hey waddup cuh"
     }
 
     var event3: EventItemData = {
@@ -179,14 +179,14 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     };
     //console.log(newMyEvent)
     myEvents.push(newMyEvent);
-    events = events.filter( x => x.name != name);
-    this.setState({events:events, myEvents:myEvents});
+    events = events.filter(x => x.name != name);
+    this.setState({ events: events, myEvents: myEvents });
   }
 
   onEventIgnore = (name: string) => {
     var events = this.state.events;
-    events = events.filter( x => x.name != name);
-    this.setState({events: events});
+    events = events.filter(x => x.name != name);
+    this.setState({ events: events });
 
   }
 
@@ -194,7 +194,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     var events = this.state.events;
     var event_to_load_array = events.filter(event => event.name == name);
     var event_to_load = event_to_load_array[0];
-    this.setState({SelectedEvent:event_to_load});
+    this.setState({ SelectedEvent: event_to_load });
   }
 
 
@@ -272,27 +272,19 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                         <div className="card-body">
                           <div className="row justify-content-center">
                             <p>{this.state.SelectedEvent.description}
-                                                </p>
+                            </p>
                           </div>
                         </div>
                         <div className="card-body">
                           <div className="row justify-content-center">
                             <ul className="list-inline list-unstyled">
-                              <li className="list-inline-item text-secondary">
-                                <i>
-                                  <u>basketball</u>
-                                </i>
-                              </li>
-                              <li className="list-inline-item text-secondary">
-                                <i>
-                                  <u>Lebron Jr</u>
-                                </i>
-                              </li>
-                              <li className="list-inline-item text-secondary">
-                                <i>
-                                  <u>Los Angeles</u>
-                                </i>
-                              </li>
+                              {this.state.SelectedEvent.tags.map(tag => 
+                                <li className="list-inline-item text-secondary">
+                                  <i>
+                                    <u>{tag}</u>
+                                  </i>
+                                </li>
+                              )}
                             </ul>
 
                           </div>
@@ -367,7 +359,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
             <div className="col-md-9 scroll">
 
               <div>{eventData.map(event =>
-                <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore} onSelectEvent={this.onEventSelectEvent}/>
+                <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore} onSelectEvent={this.onEventSelectEvent} />
               )}
               </div>
 
@@ -479,7 +471,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
                       <div>
                         <MyEvents myConfirmedEvents={this.state.myEvents} />
-                      
+
                       </div>
 
 

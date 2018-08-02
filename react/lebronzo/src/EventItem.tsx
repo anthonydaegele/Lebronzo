@@ -44,13 +44,17 @@ export class EventItem extends React.Component<EventItemProps>{
                                             <p className="text-secondary"> Organizer: {this.props.owner}</p>
                                             <p><i className="fa fa-calendar" />{this.props.date} </p>
                                             <p><i className="fa fa-map-pin" aria-hidden="true" /> {this.props.location}</p>
-                                            <div className="text-secondary"><i>{this.props.tags.map(tag => {
-                                                return ( <div key={tag}>
-                                                        <div>{tag}</div>
-                                                        </div>)
-                                            })
-                                            }
-                                            </i></div>
+                                            <div className="text-secondary">
+                                            <ul className="list-inline list-unstyled">
+                                                {this.props.tags.map(tag =>
+                                                    <li className="list-inline-item text-secondary">
+                                                        <i>
+                                                            <u>{tag}</u>
+                                                        </i>
+                                                    </li>  
+                                                )}
+                                            </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
