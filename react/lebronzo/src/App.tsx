@@ -82,11 +82,11 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     };
   }
 
-  onEventRSVP=(name:string) => {
+  onEventRSVP = (name: string) => {
 
   }
 
-  onEventIgnore=(name: string) => {
+  onEventIgnore = (name: string) => {
 
 
   }
@@ -257,15 +257,14 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
           {/* beginning of event */}
 
-
-          <div>{eventData.map(event =>
-            <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore}/>
-          )}
-          </div>
-
-
           <div className="row">
             <div className="col-md-9 scroll">
+
+              <div>{eventData.map(event =>
+                <EventItem key={event.name} name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore} />
+              )}
+              </div>
+
               {/*<div className="row mb-2">
                 <div className="col-md-12">
                   <div className="card">
@@ -360,25 +359,25 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                 </div>
               </div>
         </div> */}
-            <div className="col-md-3">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="card">
-                    <div className="card-body">
-                      <h2>My Events</h2>
-                      <div>Heading to LA</div>
-                      <div>AAU Tournament Watch</div>
-                      <div>Bachelorette Finale Watch</div>
-                      <div>Wine Night</div>
-                    </div>
+            </div>
+          <div className="col-md-3">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="card">
+                  <div className="card-body">
+                    <h2>My Events</h2>
+                    <div>Heading to LA</div>
+                    <div>AAU Tournament Watch</div>
+                    <div>Bachelorette Finale Watch</div>
+                    <div>Wine Night</div>
                   </div>
                 </div>
               </div>
             </div>
-    {/* </div> */}
+          </div>
+          {/* </div> */}
         </div>
         {/* end of event */}
-      </div>
       </div>
       </div>
     );
