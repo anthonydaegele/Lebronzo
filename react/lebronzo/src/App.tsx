@@ -27,6 +27,12 @@ interface EventFeedState {
 
 interface MyEventData {
   name: string;
+  owner: string;
+  location: string;
+  date: string;
+  tags: Array<string>;
+  image: string;
+  description: string;
 }
 
 // interface myEventsState {
@@ -81,15 +87,33 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     }
 
     var myEvent1: MyEventData = {
-      name: "Lebron is coming to LA!"
+      name: "Lebron is coming to LA!",
+      owner: "Nick Palutsis",
+      location: "Pheonix, AZ",
+      date: "September 5th",
+      tags: ["Lebron", "AZ", "fun", "beer"],
+      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
+      description: "Lebron has finally made the right decision and come to LA! It's about time! Let's celebrate!"
     }
 
     var myEvent2: MyEventData = {
-      name: "Bachelorette finale watch!"
+      name: "Bachelorette finale watch!",
+      owner: "Anthony Daegele",
+      location: "Chicago, IL",
+      date: "December 10th",
+      tags: ["The Bachelorette", "fake", "show", "abc"],
+      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
+      description: "I can't believe it's finally here! Come watch how this riveting season of The Bachelorette will end!"
     }
 
     var myEvent3: MyEventData = {
-      name: "Lebron Jr Birthday!"
+      name: "Lebron Jr Birthday!",
+      owner: "Mrs. James",
+      location: "Akron, OH",
+      date: "March 29th",
+      tags: ["birthday", "celebration", "fun", "cake", "pizza"],
+      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
+      description: "Come celebrate with us as we herald in a new year for Lebron Jr! There will be cake and pizza!"
     }
 
     this.state = {
@@ -140,8 +164,16 @@ class EventFeed extends React.Component<{}, EventFeedState> {
   onEventRSVP = (name: string) => {
     var events = this.state.events;
     var myEvents = this.state.myEvents;
+    var event_to_move_array = events.filter(event => event.name == name);
+    var event_to_move = event_to_move_array[0];
     var newMyEvent: MyEventData = {
-      name: name
+      name: event_to_move.name,
+      owner: event_to_move.owner,
+      location: event_to_move.location,
+      date: event_to_move.date,
+      tags: event_to_move.tags,
+      image: event_to_move.image,
+      description: event_to_move.description
     };
     //console.log(newMyEvent)
     myEvents.push(newMyEvent);
@@ -438,7 +470,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                       <div>Wine Night</div> */}
 
                       <div>
-                        <MyEvents names={this.state.myEvents.map(x=> x.name)} />
+                        <MyEvents myConfirmedEvents={this.state.myEvents} />
                       
                       </div>
 
