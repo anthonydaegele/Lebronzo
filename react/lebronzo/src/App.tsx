@@ -206,7 +206,7 @@ class App extends React.Component {
                         <div className="col-md-8">
                           <div className="card-body">
                             <div className="news-content">
-                              <a href="#"><h2>Hey guys I'm a total loser and I am heading to LA to make movies and all of that jazz... It's ok though because Nick still loves me, and I still love him</h2></a>
+                              <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><h2>Hey guys I'm a total loser and I am heading to LA to make movies and all of that jazz... It's ok though because Nick still loves me, and I still love him</h2></a>
                               <p className="text-secondary"> Organizer: LeBron James</p>
                               <p><i className="fa fa-calendar" /> July 2, 2018 </p>
                               <p><i className="fa fa-map-pin" aria-hidden="true" /> This place is basically hell. Nobody likes it here. We have earthquakes, celebrities, and avocado toast... what could possibly be worse</p>
