@@ -4,7 +4,7 @@ interface myEventsProps {
     names: Array<string>;
 }
 
-export class myEvents extends React.Component<myEventsProps>{
+export class MyEvents extends React.Component<myEventsProps>{
     render() {
         return (
             <div>{this.props.names.map(name => {

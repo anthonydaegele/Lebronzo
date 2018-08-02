@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { EventItem } from './EventItem';
-import { myEvents } from './myEvents';
+import { MyEvents } from './myEvents';
 
 interface EventItemData {
   name: string;
@@ -15,7 +15,7 @@ interface EventItemData {
 
 interface EventFeedState {
   events: Array<EventItemData>;
-  myEvents: Array<myEventData>;
+  myEvents: Array<MyEventData>;
   newEventName: string;
   newEventOwner: string;
   newEventLocation: string;
@@ -25,7 +25,7 @@ interface EventFeedState {
   newEventDescription: string;
 }
 
-interface myEventData {
+interface MyEventData {
   name: string;
 }
 
@@ -80,15 +80,15 @@ class EventFeed extends React.Component<{}, EventFeedState> {
       description: "Come watch Lebron Jr. beat down on some scrubs"
     }
 
-    var myEvent1: myEventData = {
+    var myEvent1: MyEventData = {
       name: "Lebron is coming to LA!"
     }
 
-    var myEvent2: myEventData = {
+    var myEvent2: MyEventData = {
       name: "Bachelorette finale watch!"
     }
 
-    var myEvent3: myEventData = {
+    var myEvent3: MyEventData = {
       name: "Lebron Jr Birthday!"
     }
 
@@ -104,9 +104,17 @@ class EventFeed extends React.Component<{}, EventFeedState> {
       newEventDescription: ""
     };
 
-    // class myEvents extends React.Component<{}, myEventsState> {
-    //   constructor(p: {}) {
+
+    // class myEvents extends React.Component<{},{}>{
+    //   constructor(p: {}){
     //     super(p);
+    //   }
+    // }
+    // class myEvents extends React.Component<{}, {}}> {
+    //    constructor(p: {}) {
+    //      super(p);
+    //    }
+    //   }
 
     //     var myEvent1: myEventData = {
     //       name: "Lebron is coming to LA!"
@@ -142,7 +150,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
   public render() {
 
     var eventData = this.state.events;
-    var myEventData = this.state.myEvents;
+    //var myEventData = this.state.myEvents;
 
     return (
 
@@ -419,9 +427,9 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                       <div>Bachelorette Finale Watch</div>
                       <div>Wine Night</div> */}
 
-                      <div>{myEventData.map(event =>
-                        <myEvents key={event.name} name={event.name} />
-                      )}
+                      <div>
+                        <MyEvents names={this.state.myEvents.map(x=> x.name)} />
+                      
                       </div>
 
 
