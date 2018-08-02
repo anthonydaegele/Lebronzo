@@ -1,25 +1,29 @@
 import * as React from 'react';
 import './App.css';
-// import { EventItem } from './EventItem';
+import { EventItem } from './EventItem';
 
-// interface EventItemData {
-//   name: string;
-//   owner: string;
-//   location: string;
-//   date: string;
-//   tags: Array<string>;
-// }
+interface EventItemData {
+  name: string;
+  owner: string;
+  location: string;
+  date: string;
+  tags: Array<string>;
+  image: string;
+  description: string;
+}
 
-// interface EventItemState {
-//   events: Array<EventItemData>;
-//   newEventName: string;
-//   newEventOwner: string;
-//   newEventLocation: string;
-//   newEventDate: string;
-//   newEventTags: Array<string>;
-// }
+interface EventFeedState {
+  events: Array<EventItemData>;
+  newEventName: string;
+  newEventOwner: string;
+  newEventLocation: string;
+  newEventDate: string;
+  newEventTags: Array<string>;
+  newEventImage: string;
+  newEventDescription: string;
+}
 
-// class EventFeed extends React.Component<{}, EventItemState> {
+// class EventFeed extends React.Component<{}, EventFeedState> {
 //   contructor(p: {}){
 //     super(p);
 //     this.state = { events: [],
@@ -31,8 +35,67 @@ import './App.css';
 //   }
 // }
 
-class App extends React.Component {
+
+class EventFeed extends React.Component<{}, EventFeedState> {
+  constructor(p: {}) {
+    super(p);
+
+    var event1: EventItemData = {
+      name: "AAU Game",
+      owner: "Lebron James",
+      location: "Los Angeles, CA",
+      date: "August 2nd",
+      tags: ["basketball", "LA", "Lebron", "Not Cleveland"],
+      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
+      description: "Come watch Lebron Jr. beat down on some scrubs"
+    }
+
+    var event2: EventItemData = {
+      name: "AAU Game 2",
+      owner: "Lebron James",
+      location: "Los Angeles, CA",
+      date: "August 2nd",
+      tags: ["basketball", "LA", "Lebron", "Not Cleveland"],
+      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
+      description: "Come watch Lebron Jr. beat down on some scrubs"
+    }
+
+    var event3: EventItemData = {
+      name: "AAU Game 3",
+      owner: "Lebron James",
+      location: "Los Angeles, CA",
+      date: "August 2nd",
+      tags: ["basketball", "LA", "Lebron", "Not Cleveland"],
+      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
+      description: "Come watch Lebron Jr. beat down on some scrubs"
+    }
+
+    this.state = {
+      events: [event1, event2, event3],
+      newEventName: "",
+      newEventOwner: "",
+      newEventLocation: "",
+      newEventDate: "",
+      newEventTags: [],
+      newEventImage: "",
+      newEventDescription: ""
+    };
+  }
+
+  onEventRSVP=(name:string) => {
+
+  }
+
+  onEventIgnore=(name: string) => {
+
+
+  }
+
+
   public render() {
+
+    var eventData = this.state.events;
+
     return (
 
 
@@ -78,102 +141,102 @@ class App extends React.Component {
 
                   {/* insert container here */}
 
-                            <div className="row">
-                                <div className="scroll">
-                                    <div>
-                                        <img src="http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276"></img>
-                                    </div>
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <i>Lebron James</i>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <i>Tuesday, July 31st</i>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <i>300 N Cavalier Avenue, Los Angeles, CA 90011</i>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <p>Come watch Lebron Jr. beat down on inferior players. Food will be provided
-                                                    courtesy of Blaze Pizza.
+                  <div className="row">
+                    <div className="scroll">
+                      <div>
+                        <img src="http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276"></img>
+                      </div>
+                      <div className="card">
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <i>Lebron James</i>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <i>Tuesday, July 31st</i>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <i>300 N Cavalier Avenue, Los Angeles, CA 90011</i>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <p>Come watch Lebron Jr. beat down on inferior players. Food will be provided
+                                courtesy of Blaze Pizza.
                                                 </p>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <ul className="list-inline list-unstyled">
-                                                    <li className="list-inline-item text-secondary">
-                                                        <i>
-                                                            <u>basketball</u>
-                                                        </i>
-                                                    </li>
-                                                    <li className="list-inline-item text-secondary">
-                                                        <i>
-                                                            <u>Lebron Jr</u>
-                                                        </i>
-                                                    </li>
-                                                    <li className="list-inline-item text-secondary">
-                                                        <i>
-                                                            <u>Los Angeles</u>
-                                                        </i>
-                                                    </li>
-                                                </ul>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <ul className="list-inline list-unstyled">
+                              <li className="list-inline-item text-secondary">
+                                <i>
+                                  <u>basketball</u>
+                                </i>
+                              </li>
+                              <li className="list-inline-item text-secondary">
+                                <i>
+                                  <u>Lebron Jr</u>
+                                </i>
+                              </li>
+                              <li className="list-inline-item text-secondary">
+                                <i>
+                                  <u>Los Angeles</u>
+                                </i>
+                              </li>
+                            </ul>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <h3>Comments</h3>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="row justify-content-center">
-                                                <div className="input-group">
-                                                    <input type="text" id="userComment" className="form-control input-sm chat-input" placeholder="Write your message here..." />
-                                                    <span className="input-group-btn">
-                                                    {/* Removed `onClick={addComment}` from above line */}
-                                                        <a href="#" className="btn btn-primary btn-sm">
-                                                            <span className="glyphicon glyphicon-comment"></span> Add Comment</a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="row">
-                                                <strong className="pull-left primary-font">James</strong>
-                                                <small className="pull-right text-muted">
-                                                    <span className="glyphicon glyphicon-time"></span>7 mins ago</small>
-                                                <br />
-                                                <p>Wow this looks like such a fun event. I can't wait to see Lebron play in
-                                                    LA, what a waste it was for him to play in Cleveland! I look forward
-                                                    to the food and entertainment!</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="card-body">
-                                            <div className="row">
-                                                <strong className="pull-left primary-font">Chris</strong>
-                                                <small className="pull-right text-muted">
-                                                    <span className="glyphicon glyphicon-time"></span>18 mins ago</small>
-                                                <br />
-                                                <p>I am so glad Lebron is in LA now. He simply does not belong in Cleveland!
-                                                    All that talent, but so far away from any kind of championship culture
-                                                    or mentality? SHAME!
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="card">
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <h3>Comments</h3>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="row justify-content-center">
+                            <div className="input-group">
+                              <input type="text" id="userComment" className="form-control input-sm chat-input" placeholder="Write your message here..." />
+                              <span className="input-group-btn">
+                                {/* Removed `onClick={addComment}` from above line */}
+                                <a href="#" className="btn btn-primary btn-sm">
+                                  <span className="glyphicon glyphicon-comment"></span> Add Comment</a>
+                              </span>
                             </div>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="row">
+                            <strong className="pull-left primary-font">James</strong>
+                            <small className="pull-right text-muted">
+                              <span className="glyphicon glyphicon-time"></span>7 mins ago</small>
+                            <br />
+                            <p>Wow this looks like such a fun event. I can't wait to see Lebron play in
+                                LA, what a waste it was for him to play in Cleveland! I look forward
+                                                    to the food and entertainment!</p>
+                          </div>
+                        </div>
+
+                        <div className="card-body">
+                          <div className="row">
+                            <strong className="pull-left primary-font">Chris</strong>
+                            <small className="pull-right text-muted">
+                              <span className="glyphicon glyphicon-time"></span>18 mins ago</small>
+                            <br />
+                            <p>I am so glad Lebron is in LA now. He simply does not belong in Cleveland!
+                                All that talent, but so far away from any kind of championship culture
+                                or mentality? SHAME!
+                                                </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   {/* bottom of container */}
 
@@ -193,7 +256,15 @@ class App extends React.Component {
           {/* end of modal */}
 
           {/* beginning of event */}
-          <div className="row">
+
+
+          <div>{eventData.map(event =>
+            <EventItem name={event.name} owner={event.owner} location={event.location} date={event.date} tags={event.tags} image={event.image} description={event.description} onRSVP={this.onEventRSVP} onIgnore={this.onEventIgnore}/>
+          )}
+          </div>
+
+
+          {/* <div className="row">
             <div className="col-md-9 scroll">
               <div className="row mb-2">
                 <div className="col-md-12">
@@ -303,8 +374,8 @@ class App extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> */}
+    {/* </div> */}
         </div>
         {/* end of event */}
       </div>
@@ -312,4 +383,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default EventFeed;

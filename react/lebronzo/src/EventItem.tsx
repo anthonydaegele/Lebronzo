@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface EventItemProps {
+export interface EventItemProps {
     name: string;
     owner: string;
     location: string;
