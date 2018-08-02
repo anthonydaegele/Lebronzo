@@ -68,10 +68,25 @@ h2 {
   color: blueviolet;
 }
 
+h3 {
+  color: blueviolet;
+}
+
 button {
   margin: 0.5rem;
 }
 
 .navbar-brand {
   color: yellow;
+}
+
+.card-body {
+  /* height: 5px; */
+  height: auto;
+  width: auto;
+}
+
+.pull-right {
+  padding-left: 10px;
+  padding-top: 3px;
 }
