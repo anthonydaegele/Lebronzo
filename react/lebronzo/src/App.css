@@ -90,3 +90,8 @@ button {
   padding-left: 10px;
   padding-top: 3px;
 }
+
+i {
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}

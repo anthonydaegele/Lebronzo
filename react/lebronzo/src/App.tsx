@@ -207,6 +207,73 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
 
       <div>
+        <div id="create-event-modal" className="modal fade bd-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div className="modal-dialog  modal-dialog-centered modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h2>Create Event</h2>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+
+                {/* insert container here */}
+                <div className="row">
+                  <div className="col-md-4">
+                    <img src="https://cdn.pixabay.com/photo/2016/01/03/00/43/upload-1118929_1280.png" />
+                    <button type="button" className="btn btn-primary col-md-12" data-dismiss="modal">Upload Photo</button>
+                  </div>
+                  <div className="col-md-8">
+
+
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-default">Title</span>
+                      </div>
+                      <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"></input>
+                    </div>
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-default">Date</span>
+                      </div>
+                      <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"></input>
+                    </div>
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-default">Time</span>
+                      </div>
+                      <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"></input>
+                    </div>
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-default">Tags</span>
+                      </div>
+                      <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"></input>
+                    </div>
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="inputGroup-sizing-default">Description</span>
+                      </div>
+                      <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"></input>
+                    </div>
+
+                  </div>
+                </div>
+                {/* bottom of container */}
+
+              </div>
+              <div className="row">
+                <div className="col-md-2"></div>
+                <button type="button" className="btn btn-success col-md-3" data-dismiss="modal">Create</button>
+                <div className="col-md-2"></div>
+                <button type="button" className="btn btn-secondary col-md-3" data-dismiss="modal">Cancel</button>
+                <div className="col-md-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style={{ "backgroundColor": "blueviolet" }}>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -217,7 +284,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="navbar-nav mr-auto mt-2 mt-lg-0">
               <a className="nav-item nav-link" href="#">Feed</a>
-              <a className="nav-item nav-link" href="#">Create Event</a>
+              <a className="nav-item nav-link" href="#" data-toggle="modal" data-target="#create-event-modal">Create Event</a>
             </div>
             <form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
@@ -278,7 +345,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                         <div className="card-body">
                           <div className="row justify-content-center">
                             <ul className="list-inline list-unstyled">
-                              {this.state.SelectedEvent.tags.map(tag => 
+                              {this.state.SelectedEvent.tags.map(tag =>
                                 <li className="list-inline-item text-secondary">
                                   <i>
                                     <u>{tag}</u>
@@ -361,7 +428,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
               )}
               </div>
 
-             
+
             </div>
             <div className="col-md-3">
               <div className="row">

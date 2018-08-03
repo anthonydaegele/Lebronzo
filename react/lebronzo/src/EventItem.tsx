@@ -42,7 +42,7 @@ export class EventItem extends React.Component<EventItemProps>{
                                         <div className="news-content">
                                             <a href="#" onClick={this.onSelectEvent} data-toggle="modal" data-target="#event-modal"><h2>{this.props.name}</h2></a>
                                             <p className="text-secondary"> Organizer: {this.props.owner}</p>
-                                            <p><i className="fa fa-calendar" />{this.props.date} </p>
+                                            <p><i className="fa fa-calendar" /> {this.props.date} </p>
                                             <p><i className="fa fa-map-pin" aria-hidden="true" /> {this.props.location}</p>
                                             <div className="text-secondary">
                                             <ul className="list-inline list-unstyled">
