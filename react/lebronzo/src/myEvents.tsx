@@ -29,6 +29,7 @@ export class MyEvents extends React.Component<myEventsProps>{
                     <div>
                         <div style={{"color":"blueviolet"}}>{event.name}</div>
                         <div style={{"color":"grey"}}><u><i>{event.date}</i></u></div>
+                        <div style={{"color":"darkgrey"}}><i>{event.location}</i></div>
                         <br/>
                     </div>
                 )
