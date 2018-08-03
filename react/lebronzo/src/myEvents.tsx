@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface myEventProps{
+interface myEventProps {
     name: string;
     owner: string;
     location: string;
@@ -8,6 +8,7 @@ interface myEventProps{
     tags: Array<string>;
     image: string;
     description: string;
+    //onMyEventsSelectEvent: (myArray: Array<myEventProps>) => void;
 }
 
 interface myEventsProps {
@@ -16,11 +17,20 @@ interface myEventsProps {
 
 
 export class MyEvents extends React.Component<myEventsProps>{
+
+    // onMyEventsSelectEvent = () => {
+    //     this.props.onMyEventsSelectEvent(this.props.myConfirmedEvents)
+    // }
+
     render() {
         return (
             <div>{this.props.myConfirmedEvents.map(event => {
                 return (
-                    <div>{event.name}</div>
+                    <div>
+                        <div style={{"color":"blueviolet"}}>{event.name}</div>
+                        <div style={{"color":"grey"}}><u><i>{event.date}</i></u></div>
+                        <br/>
+                    </div>
                 )
             })}
             </div>
