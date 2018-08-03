@@ -414,7 +414,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                             </div>
                           </div>
                         </div>
-                        <div className="card-body">
+                        {/* <div className="card-body">
                           <div className="row">
                             <strong className="pull-left primary-font">James</strong>
                             <small className="pull-right text-muted">
@@ -437,7 +437,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
                                 or mentality? SHAME!
                                                 </p>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -461,6 +461,26 @@ class EventFeed extends React.Component<{}, EventFeedState> {
           {/* beginning of event */}
 
           <div className="row">
+
+            <div className="col-md-3">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="card">
+                    <div className="card-body">
+                      <h2>My Events</h2>
+                      
+
+                      <div>
+                        <MyEvents myConfirmedEvents={this.state.myEvents} />
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
             <div className="col-md-9 scroll">
 
               <div>{eventData.map(event =>
@@ -470,28 +490,23 @@ class EventFeed extends React.Component<{}, EventFeedState> {
 
 
             </div>
-            <div className="col-md-3">
+            {/* <div className="col-md-3">
               <div className="row">
                 <div className="col-md-12">
                   <div className="card">
                     <div className="card-body">
                       <h2>My Events</h2>
-                      {/* <div>Heading to LA</div>
-                      <div>AAU Tournament Watch</div>
-                      <div>Bachelorette Finale Watch</div>
-                      <div>Wine Night</div> */}
+                      
 
                       <div>
                         <MyEvents myConfirmedEvents={this.state.myEvents} />
 
                       </div>
-
-
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* </div> */}
           </div>
           {/* end of event */}
