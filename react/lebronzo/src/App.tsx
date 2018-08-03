@@ -128,20 +128,20 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     }
 
     var myEvent1: MyEventData = {
-      name: "Lebron is coming to LA!",
-      owner: "Nick Palutsis",
-      location: "Pheonix, AZ",
-      date: "September 5th",
-      tags: ["Lebron", "AZ", "fun", "beer"],
+      name: "Developer School Presentations",
+      owner: "Igor Geyfman",
+      location: "Dallas, TX",
+      date: "August 3rd, 2018",
+      tags: ["Developer School", "Dallas", "dolphin"],
       image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
-      description: "Lebron has finally made the right decision and come to LA! It's about time! Let's celebrate!"
+      description: "Come watch as our new fins present on the projects they've worked on throughout the week in Developer School."
     }
 
     var myEvent2: MyEventData = {
       name: "Bachelorette finale watch!",
-      owner: "Anthony Daegele",
+      owner: "Nick Palutsis",
       location: "Chicago, IL",
-      date: "December 10th",
+      date: "August 6th, 2018",
       tags: ["The Bachelorette", "fake", "show", "abc"],
       image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
       description: "I can't believe it's finally here! Come watch how this riveting season of The Bachelorette will end!"
@@ -151,7 +151,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
       name: "Lebron Jr Birthday!",
       owner: "Mrs. James",
       location: "Akron, OH",
-      date: "March 29th",
+      date: "October 6th, 2018",
       tags: ["birthday", "celebration", "fun", "cake", "pizza"],
       image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
       description: "Come celebrate with us as we herald in a new year for Lebron Jr! There will be cake and pizza!"
