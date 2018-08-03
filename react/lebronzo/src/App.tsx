@@ -63,28 +63,68 @@ class EventFeed extends React.Component<{}, EventFeedState> {
       location: "Los Angeles, CA",
       date: "August 2nd",
       tags: ["basketball", "LA", "Lebron", "Not Cleveland"],
-      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
-      description: "Come watch Lebron Jr. beat down on some scrubs"
+      image: "https://cdn-s3.si.com/s3fs-public/2018/07/30/lebron-james-dunk.jpg",
+      description: "Come watch Bronny beat down on some scrubs"
     }
 
     var event2: EventItemData = {
-      name: "AAU Game 2",
+      name: "Liars Dice",
       owner: "Nick Palutsis",
-      location: "Hell",
-      date: "August 10th",
-      tags: ["basketball", "LA", "Lebron", "Not Cleveland", "the devil"],
-      image: "https://thenypost.files.wordpress.com/2018/01/lebron-2.jpg?quality=90&strip=all",
-      description: "Hey waddup cuh"
+      location: "Black Friars",
+      date: "Every night @ 10pm",
+      tags: ["Dice", "Bars", "Nightlife"],
+      image: "https://www.thoughtco.com/thmb/hcMi1eJVLdH6l0UHSka5IvEb83Q=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-93453966-59684e1d3df78c57f49b0c91.jpg",
+      description: "The beautiful game. The sweet science. The sport of kings."
     }
 
     var event3: EventItemData = {
-      name: "AAU Game 3",
-      owner: "Lebron James",
-      location: "Los Angeles, CA",
-      date: "August 2nd",
-      tags: ["basketball", "LA", "Lebron", "Not Cleveland"],
-      image: "http://images.performgroup.com/di/library/omnisport/d1/f8/lebronjames-cropped_i9ob0vabfhuc1jjospcm2a9f8.jpg?t=1593952276",
-      description: "Come watch Lebron Jr. beat down on some scrubs"
+      name: "Top Golf",
+      owner: "Travis Gayle",
+      location: "8787 Park Ln, Dallas, TX 75231",
+      date: "July 28, 2018",
+      tags: ["Golf", "Bars", "Food"],
+      image: "http://wpmediars.golfwrx.com/wp-content/uploads/2018/06/TopGolfVegas.jpg",
+      description: "Come for the food, friends, and to laugh at how bad at golf we all are"
+    }
+
+    var event4: EventItemData = {
+      name: "Smash Burger Run",
+      owner: "Travis Gayle",
+      location: "1201 16th St, Space 106, Denver, CO 80202",
+      date: "Tonight at 1 AM",
+      tags: ["Burgers", "Food", "Smash", "Munchies"],
+      image: "http://www.franchisetimes.com/images/cache/cache_8/cache_5/cache_e/Smashburger-21b89e58.jpeg?ver=1533306356&aspectratio=1.5267175572519",
+      description: "Who doesn't love late night food?"
+    }
+
+    var event5: EventItemData = {
+      name: "Visiting South Bend Zoo Bison Pen",
+      owner: "Anthony Daegele",
+      location: "500 S Greenlawn Ave, South Bend, IN 46615",
+      date: "August 4, 2018",
+      tags: ["Zoo", "Animals", "Bison"],
+      image: "https://i.pinimg.com/736x/43/47/52/434752ae4cbbc60bf6cd33dccee1041e--american-bison-native-american.jpg",
+      description: "The oldest zoo in Indiana, Potawatomi zoo features over 500 animals, with fun activities for everyone!"
+    }
+
+    var event6: EventItemData = {
+      name: "Bubble Soccer",
+      owner: "Nick Ward",
+      location: "McKinney, Texas",
+      date: "August 11, 2018",
+      tags: ["Soccer", "Sports", "Activities"],
+      image: "https://cdn.inflatable-zone.com/media/product/c13/free-shipping-1-5m-bubble-soccer-austin-bubble-bumper-suit-messi-bubble-football-colorful-dot-e27.jpg",
+      description: "One of the few times you'll get the chance to hit your co-workers in a socially accepted way"
+    }
+
+    var event7: EventItemData = {
+      name: "The Roast of Ray",
+      owner: "Morgan Radic",
+      location: "Hotel Zaza",
+      date: "August 4, 2018",
+      tags: ["Comedy"],
+      image: "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/16807745_2085227865037354_6288810888283698698_n.jpg?_nc_cat=0&oh=494bdfe9c064b4a5ba3658b0ee8298a0&oe=5BFFA4B6",
+      description: "I think the title says it all"
     }
 
     var myEvent1: MyEventData = {
@@ -118,7 +158,7 @@ class EventFeed extends React.Component<{}, EventFeedState> {
     }
 
     this.state = {
-      events: [event1, event2, event3],
+      events: [event3, event2, event1, event4, event5, event7, event6],
       myEvents: [myEvent1, myEvent2, myEvent3],
       SelectedEvent: event1,
       newEventName: "",
